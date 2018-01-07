@@ -11,14 +11,14 @@ PID::PID() {}
 
 PID::~PID() {}
 
-void PID::Init(double Kp, double Ki, double Kd) {
+void PID::Init(double kp, double ki, double kd) {
     p_error = 0.0;
     i_error = 0.0;
     d_error = 0.0;
     
-    Kp = Kp;
-    Ki = Ki;
-    Kd = Kd;
+    Kp = kp;
+    Ki = ki;
+    Kd = kd;
     
 }
 
@@ -32,15 +32,17 @@ void PID::UpdateError(double cte) {
 }
 
 double PID::TotalError() {
-    double the_steering =  Kp * p_error - Ki * i_error - Kd * d_error;
+    double steering_angle =  (-Kp * p_error) - (Ki * i_error) - (Kd * d_error);
     
-    if(the_steering <= -1.0) {
-        the_steering = -1.0;
-    }
-    if(the_steering >= 1.0) {
-        the_steering = 1.0;
+    if (steering_angle <= -1.0) {
+        steering_angle = -1.0;
+        
     }
     
-    return the_steering;
+    if (steering_angle >= 1.0) {
+        steering_angle = 1.0;
+    }
+    
+    return steering_angle;
 }
 
