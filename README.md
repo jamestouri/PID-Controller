@@ -93,6 +93,7 @@ that's just a guess.
 One last note here: regardless of the IDE used, every submitted project must
 still be compilable with cmake and make./
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+## Reflection
+When I looked through the functions and where to implement, I was a bit surprised with the little amount of lines needed to implement a successful drive around the track, considering the previous time using deep learning it took much longer and a lot of data to tune and tweak for it to barely get across the track. 
+I wished I used the twiddle algorithm to get the final parameters, however I ended up getting them through manual tuning of trial and error until I was satisfied.  Will come back and implement twiddle algorithm for best practices. 
 
