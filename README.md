@@ -95,5 +95,13 @@ still be compilable with cmake and make./
 
 ## Reflection
 When I looked through the functions and where to implement, I was a bit surprised with the little amount of lines needed to implement a successful drive around the track, considering the previous time using deep learning it took much longer and a lot of data to tune and tweak for it to barely get across the track. 
-I wished I used the twiddle algorithm to get the final parameters, however I ended up getting them through manual tuning of trial and error until I was satisfied.  Will come back and implement twiddle algorithm for best practices. 
+I wished I used the twiddle algorithm to get the final parameters, however I ended up getting them through manual tuning of trial and error until I was satisfied. The longest part of this project was tuning the PID controller, rather than implementig it.  Will come back and implement twiddle algorithm for best practices. 
+
+My final PID Parameters were set to 0.5, 0.005, and 10.0
+
+The P is the value proportional to the current value of the cross track error (cte). Increases in the P value will increase the responses of correction.  Values that are too high will cause the vehicle to overshoot the track.
+
+The I value integrates past values over time.  Extremely valuable for reducing systematic bias.  It was not necessary to account for the I value in the simulator, but decided to keep it at a low value rather than 0. 
+
+The D value takes the dervative of the correction of the cte. It is used to help reduce overshoot. 
 
